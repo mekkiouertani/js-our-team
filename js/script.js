@@ -71,7 +71,6 @@ btnSubmit.addEventListener('click', function(){
         picture: document.getElementById('file').value
     }
 
-    console.log(newMember);
     teamMembers.push(newMember);
     printCard(newMember);
     reset();
@@ -87,7 +86,4 @@ function reset(){
     role: document.getElementById('role').value= '';
     picture: document.getElementById('file').value = '';
 }
-//CONSOLE LOG
-console.log(teamMembers);
-console.log(btnForm);
-console.log(btnSubmit);
+
