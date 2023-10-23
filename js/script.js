@@ -33,28 +33,27 @@ const teamMembers = [
     },
 ];
 
-console.log(teamMembers);
 
-const rowEl = document.querySelector('.row');
+for(let i=0; i < teamMembers.length; i++){
+    printCard(teamMembers[i]);
+}
 
-function printCard(){
+function printCard(member){
     const colEl = document.createElement('div');
     colEl.classList.add('col-4');
     const template =`
         <div class="card text-start">
-            <img class="card-img-top" src="img/cats/${member.picture}" alt="picture">
+            <img class="card-img-top" src="img/${member .picture}" alt="picture">
             <div class="card-body text-center">
-                <h3 class="card-title">${member.name}</h3>
-                <h5 class="card-title">${member.role}</h5>
+                <h3 class="card-title fs-5 fw-bold">${member.name}</h3>
+                <h5 class="card-title text-muted fs-6">${member.role}</h5>
             </div>
         </div>
     `
+    const rowEl = document.querySelector('.row');
     colEl.innerHTML = template;
     rowEl.append(colEl);
 };
-
-
-
 
 
 //CONSOLE LOG
