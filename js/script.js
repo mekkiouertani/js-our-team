@@ -40,7 +40,7 @@ for(let i=0; i < teamMembers.length; i++){
 
 function printCard(member){
     const colEl = document.createElement('div');
-    colEl.classList.add('col-4');
+    colEl.classList.add('col-6', 'col-lg-4');
     const template =`
         <div class="card text-start">
             <img class="card-img-top" src="img/${member .picture}" alt="picture">
@@ -55,6 +55,34 @@ function printCard(member){
     rowEl.append(colEl);
 };
 
+const btnForm = document.querySelector('.btn.btn-success');
 
+btnForm.addEventListener('click', function(){
+    const formEl = document.querySelector('.form-group');
+    formEl.classList.remove('d-none');
+});
+
+const btnSubmit = document.querySelector('button.btn-warning');
+
+btnSubmit.addEventListener('click', function(){
+    const newMember = {
+        name: document.getElementById('name').value,
+        role: document.getElementById('role').value,
+        picture: document.getElementById('file').files
+    }
+
+    console.log(newMember);
+    teamMembers.push(newMember);
+    printCard(newMember);
+    reset();
+});
+
+
+function reset(){
+    name: document.getElementById('name').value ='';
+    role: document.getElementById('role').value= '';
+}
 //CONSOLE LOG
 console.log(teamMembers);
+console.log(btnForm);
+console.log(btnSubmit);

@@ -10,8 +10,11 @@ body{
     height: 100vh;
 }
 .row{
-    max-width: 50%;
+    max-width: 60%;
 }
 .col-4{
     min-width: 250px;
+}
+.title{
+    margin-right: 100px;
 }
