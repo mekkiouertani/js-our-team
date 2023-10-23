@@ -58,4 +58,3 @@ function printCard(member){
 
 //CONSOLE LOG
 console.log(teamMembers);
-console.log(rowEl);

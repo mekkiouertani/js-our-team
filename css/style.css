@@ -9,7 +9,9 @@ body{
     background-repeat: no-repeat;
     height: 100vh;
 }
-
 .row{
     max-width: 50%;
+}
+.col-4{
+    min-width: 250px;
 }
