@@ -43,7 +43,7 @@ function printCard(member){
     colEl.classList.add('col-6', 'col-lg-4');
     const template =`
         <div class="card text-start">
-            <img class="card-img-top" src="img/${member .picture}" alt="picture">
+            <img class="card-img-top" src="img/${member.picture}" alt="picture">
             <div class="card-body text-center">
                 <h3 class="card-title fs-5 fw-bold">${member.name}</h3>
                 <h5 class="card-title text-muted fs-6">${member.role}</h5>
@@ -56,9 +56,9 @@ function printCard(member){
 };
 
 const btnForm = document.querySelector('.btn.btn-success');
+const formEl = document.querySelector('.form-group');
 
 btnForm.addEventListener('click', function(){
-    const formEl = document.querySelector('.form-group');
     formEl.classList.remove('d-none');
 });
 
@@ -68,7 +68,7 @@ btnSubmit.addEventListener('click', function(){
     const newMember = {
         name: document.getElementById('name').value,
         role: document.getElementById('role').value,
-        picture: document.getElementById('file').files
+        picture: document.getElementById('file').value
     }
 
     console.log(newMember);
@@ -77,10 +77,15 @@ btnSubmit.addEventListener('click', function(){
     reset();
 });
 
+const btnCloseForm = document.querySelector('.btn-danger');
+btnCloseForm.addEventListener('click', function(){
+    formEl.classList.add('d-none');
+})
 
 function reset(){
     name: document.getElementById('name').value ='';
     role: document.getElementById('role').value= '';
+    picture: document.getElementById('file').value = '';
 }
 //CONSOLE LOG
 console.log(teamMembers);
